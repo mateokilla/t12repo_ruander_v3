@@ -1,0 +1,16 @@
+1) Próbáld meg elkészíteni az A különbség B halmazt, amiben csak azok az emelek szerepelnek amik A-ban vannak, és egysem azok közül, amik B-ben megtalálhatóak
+
+-szűretlen verzió(van ismétlődés, a halmaz elemiből)
+-szűrt verzió(nincs ismétlés, a halmaz elemiből)
+
+2) Készítsdl e a B különbség A halmaz műveletet
+
+
+3) Készíts a halmazműveletekből függvényt/eljárást
+- unió
+- metszet
+- különbség
+
+4) Próbálj a szerepel-e részből egy fdüggvényt csinálni, és azt alkalmazni a korábban létrehozott függvényeken.
+
+UI.: Ne felejtsétek el átnézni a szövegkezelő függvényeket :) Jövőhéten kelleni fog.
