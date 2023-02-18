@@ -80,132 +80,140 @@ function mindenMasodik(szoveg) {
 
 const eredetiSzoveg = "Ez egy szöveg";
 const ujSzoveg = mindenMasodik(eredetiSzoveg);
-document.write("Az eredeti: " +eredetiSzoveg+ "<br/>Es a kivagott: " + ujSzoveg); 
-document.write("<hr/>");
-
-const EuropaiUnio = [{
-  orszag: "Ausztria",
-  csatlakozas: "1995.01.01"
-},
-{
-  orszag: "Belgium",
-  csatlakozas: "1958.01.01"
-},
-{
-  orszag: "Bulgária",
-  csatlakozas: "2007.01.01"
-},
-{
-  orszag: "Ciprus",
-  csatlakozas: "2004.05.01"
-},
-{
-  orszag: "Csehország",
-  csatlakozas: "2004.05.01"
-},
-{
-  orszag: "Dánia",
-  csatlakozas: "1973.01.01"
-},
-{
-  orszag: "Egyesült Királyság",
-  csatlakozas: "1973.01.01"
-},
-{
-  orszag: "Észtország",
-  csatlakozas: "2004.05.01"
-},
-{
-  orszag: "Finnország",
-  csatlakozas: "1995.01.01"
-},
-{
-  orszag: "Franciaország",
-  csatlakozas: "1958.01.01"
-},
-{
-  orszag: "Görögország",
-  csatlakozas: "1981.01.01"
-},
-{
-  orszag: "Hollandia",
-  csatlakozas: "1958.01.01"
-},
-{
-  orszag: "Horvátország",
-  csatlakozas: "2013.07.01"
-},
-{
-  orszag: "Írország",
-  csatlakozas: "1973.01.01"
-},
-{
-  orszag: "Lengyelország",
-  csatlakozas: "2004.05.01"
-},
-{
-  orszag: "Lettország",
-  csatlakozas: "2004.05.01"
-},
-{
-  orszag: "Litvánia",
-  csatlakozas: "2004.05.01"
-},
-{
-  orszag: "Luxemburg",
-  csatlakozas: "1958.01.01"
-},
-{
-  orszag: "Magyarország",
-  csatlakozas: "2004.05.01"
-},
-{
-  orszag: "Málta",
-  csatlakozas: "2004.05.01"
-},
-{
-  orszag: "Németország",
-  csatlakozas: "1958.01.01"
-},
-{
-  orszag: "Olaszország",
-  csatlakozas: "1958.01.01"
-},
-{
-  orszag: "Portugália",
-  csatlakozas: "1986.01.01"
-},
-{
-  orszag: "Románia",
-  csatlakozas: "2007.01.01"
-},
-{
-  orszag: "Spanyolország",
-  csatlakozas: "1986.01.01"
-},
-{
-  orszag: "Svédország",
-  csatlakozas: "1995.01.01"
-},
-{
-  orszag: "Szlovákia",
-  csatlakozas: "2004.05.01"
-},
-{
-  orszag: "Szlovénia",
-  csatlakozas: "2004.05.01"
-}
-]
-
-document.write(EuropaiUnio.length)
-
-//filter for csatlakozas = 2007 and name
-const csatlakozas2007 = EuropaiUnio.filter((item) => {
-  return item.csatlakozas === "2007.01.01";
-}
+document.write(
+  "Az eredeti: " + eredetiSzoveg + "<br/>Es a kivagott: " + ujSzoveg
 );
 document.write("<hr/>");
-document.write("Csatlakozas 2007: " + csatlakozas2007.length);
+
+const EuropaiUnio = [
+  {
+    orszag: "Ausztria",
+    csatlakozas: "1995.01.01",
+  },
+  {
+    orszag: "Belgium",
+    csatlakozas: "1958.01.01",
+  },
+  {
+    orszag: "Bulgária",
+    csatlakozas: "2007.01.01",
+  },
+  {
+    orszag: "Ciprus",
+    csatlakozas: "2004.05.01",
+  },
+  {
+    orszag: "Csehország",
+    csatlakozas: "2004.05.01",
+  },
+  {
+    orszag: "Dánia",
+    csatlakozas: "1973.01.01",
+  },
+  {
+    orszag: "Egyesült Királyság",
+    csatlakozas: "1973.01.01",
+  },
+  {
+    orszag: "Észtország",
+    csatlakozas: "2004.05.01",
+  },
+  {
+    orszag: "Finnország",
+    csatlakozas: "1995.01.01",
+  },
+  {
+    orszag: "Franciaország",
+    csatlakozas: "1958.01.01",
+  },
+  {
+    orszag: "Görögország",
+    csatlakozas: "1981.01.01",
+  },
+  {
+    orszag: "Hollandia",
+    csatlakozas: "1958.01.01",
+  },
+  {
+    orszag: "Horvátország",
+    csatlakozas: "2013.07.01",
+  },
+  {
+    orszag: "Írország",
+    csatlakozas: "1973.01.01",
+  },
+  {
+    orszag: "Lengyelország",
+    csatlakozas: "2004.05.01",
+  },
+  {
+    orszag: "Lettország",
+    csatlakozas: "2004.05.01",
+  },
+  {
+    orszag: "Litvánia",
+    csatlakozas: "2004.05.01",
+  },
+  {
+    orszag: "Luxemburg",
+    csatlakozas: "1958.01.01",
+  },
+  {
+    orszag: "Magyarország",
+    csatlakozas: "2004.05.01",
+  },
+  {
+    orszag: "Málta",
+    csatlakozas: "2004.05.01",
+  },
+  {
+    orszag: "Németország",
+    csatlakozas: "1958.01.01",
+  },
+  {
+    orszag: "Olaszország",
+    csatlakozas: "1958.01.01",
+  },
+  {
+    orszag: "Portugália",
+    csatlakozas: "1986.01.01",
+  },
+  {
+    orszag: "Románia",
+    csatlakozas: "2007.01.01",
+  },
+  {
+    orszag: "Spanyolország",
+    csatlakozas: "1986.01.01",
+  },
+  {
+    orszag: "Svédország",
+    csatlakozas: "1995.01.01",
+  },
+  {
+    orszag: "Szlovákia",
+    csatlakozas: "2004.05.01",
+  },
+  {
+    orszag: "Szlovénia",
+    csatlakozas: "2004.05.01",
+  },
+];
+
+document.write(EuropaiUnio.length);
+
+const csatlakozas2007 = EuropaiUnio.filter((item) => {
+  return item.csatlakozas === "2007.01.01";
+});
 document.write("<hr/>");
+document.write("Csatlakozas 2007: " + csatlakozas2007.length);
 
-
+for (let i = 0; i < EuropaiUnio.length; i++) {
+  if (EuropaiUnio[i].orszag === "Magyarország") {
+    magyarorszag2 = true;
+  } else {
+    magyarorszag2 = false;
+  }
+}
+document.write("<hr/>");
+document.write("Magyarország: " + magyarorszag2);
