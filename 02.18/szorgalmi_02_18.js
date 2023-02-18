@@ -69,3 +69,16 @@ const metszetAB = metszet(A, B);
 document.write("A halmaz es B halmaz metszet: " + metszetAB);
 
 document.write("<hr/>");
+
+function mindenMasodik(szoveg) {
+  let eredmeny = "";
+  for (let i = 0; i < szoveg.length; i += 2) {
+    eredmeny += szoveg.charAt(i);
+  }
+  return eredmeny;
+}
+
+const eredetiSzoveg = "Ez egy szöveg";
+const ujSzoveg = mindenMasodik(eredetiSzoveg);
+document.write("Az eredeti: " +eredetiSzoveg+ "<br/>Es a kivagott: " + ujSzoveg); 
+document.write("<hr/>");
