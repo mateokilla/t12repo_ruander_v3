@@ -141,3 +141,40 @@ document.write(
 document.write("<hr>");
 //6. statisztika: a valtozokrol, mibol mennyi van, de csak azok szerepeljenek, ahol a valtozas legalabb 2-szer elofordul
 
+function Statisztika() {
+  //valtozasok kivalogatasa
+  let valtozasok = [];
+
+  for (let i = 0; i < fifaAdatok.length; i++) {
+    szerepelE = false;
+    for (let j = 0; j < valtozasok.length; j++) {
+      if (fifaAdatok[i].valtozas == valtozasok[j]) {
+        szerepelE = true;
+      }
+      if (szerepelE == false) {
+        valtozasok.push(fifaAdatok[i].valtozas);
+      }
+    }
+  }
+  //valtozasok megszamolasa
+  let valtozasokSeged = [];
+  for (let i = 0; i < valtozasok.length; i++) {
+    valtozasokSeged.push(0);
+  }
+  for (let i = 0; i < fifaAdatok.length; i++) {
+    for (let j = 0; j < valtozasok.length; j++) {
+      if (fifaAdatok[i].valtozas == valtozasok[j]) {
+        valtozasokSeged[j]++;
+      }
+    }
+  }
+
+  //eredmenzek megjelenitese
+  document.write("valtozas statisztika");
+  for (let i = 0; i < valtozasokSeged; i++) {
+    if (valtozasokSeged[i] > 1) {
+      document.write(valtozas[i] + ":" + valtozasokSeged[i]);
+    }
+  }
+}
+Statisztika();
