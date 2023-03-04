@@ -26,28 +26,8 @@ const csapatAdat = [
   "Uruguay;6;-1;1639",
 ];
 
-/*const csapatAdatObjektum = {};
-
-for (let i = 0; i < csapatAdat.length; i++) {
-  const adat = csapatAdat[i].split(";");
-  csapatAdatObjektum[adat[0]] = {
-    helyezes: adat[1],
-    valtozas: adat[2],
-    pontszam: adat[3],
-  };
-}
-
-for (let orszag in csapatAdatObjektum) {
-  document.write(orszag + ":<br>");
-  document.write("Helyezés: " + csapatAdatObjektum[orszag].helyezes + "<br>");
-  document.write("Változás: " + csapatAdatObjektum[orszag].valtozas + "<br>");
-  document.write(
-    "Pontszám: " + csapatAdatObjektum[orszag].pontszam + "<br><br>"
-  );
-}*/
-
-//Feri megoldasa
-function objetumFeltolto(feltoltendoElem) {
+//objektum feltoltes
+function ObjetumFeltolto(feltoltendoElem) {
   const beolvasottAdatok = [];
   for (let i = 0; i < feltoltendoElem.length; i++) {
     let objektum = {};
@@ -61,7 +41,7 @@ function objetumFeltolto(feltoltendoElem) {
   return beolvasottAdatok;
 }
 
-const fifaAdatok = objetumFeltolto(csapatAdat);
+const fifaAdatok = ObjetumFeltolto(csapatAdat);
 document.write('<table border="1">');
 document.write(
   "<tr><th>Nev</th><th>Helzezes</th><th>Valtozas</th><th>Pont</th></tr>"
@@ -76,21 +56,44 @@ document.write("</table>");
 document.write("<hr>");
 
 //1. Mennyi a csapatok szama?
-function csapatokSzama(objektum) {
+function CsapatokSzama(objektum) {
   const szamuk = objektum.length;
   document.write(szamuk);
 }
 
-csapatokSzama(fifaAdatok);
+CsapatokSzama(fifaAdatok);
 document.write("<hr>");
+
 //2. Mennyi a csapatok atlag pontszama?
-function atlagSzamitas(objektum) {
+function AtlagSzamitas(objektum) {
   let osszpontszam = 0;
   for (let i = 0; i < objektum.length; i++) {
-    osszpontszam += parseInt(objektum[i].pont);
+    osszpontszam += Number(objektum[i].pont);
   }
   const atlag = osszpontszam / objektum.length;
   document.write(atlag);
 }
 
-atlagSzamitas(fifaAdatok);
+const atlagPontszam = AtlagSzamitas(fifaAdatok);
+
+document.write("<hr>");
+//3.Lista azokrol akik az atlagnal tobbet ertek el
+function AtlagnalNagyobbLista() {
+  let atlagnalJobbCsapatok = [];
+
+  for (let i = 0; i < fifaAdatok.length; i++) {
+    if (fifaAdatok[i].pont > 1620.25) {
+      atlagnalJobbCsapatok.push(fifaAdatok[i].nev);
+    }
+  }
+  return atlagnalJobbCsapatok;
+}
+let csapatok = AtlagnalNagyobbLista();
+
+document.write("<ul>");
+
+for (let i = 0; i < csapatok.length; i++) {
+  document.write(`<li>${csapatok[i]}</li>`);
+}
+
+document.write("</ul>");
