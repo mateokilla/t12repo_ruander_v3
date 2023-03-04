@@ -74,7 +74,7 @@ function AtlagSzamitas(objektum) {
   document.write(atlag);
 }
 
-const atlagPontszam = AtlagSzamitas(fifaAdatok);
+AtlagSzamitas(fifaAdatok);
 
 document.write("<hr>");
 //3.Lista azokrol akik az atlagnal tobbet ertek el
@@ -97,3 +97,47 @@ for (let i = 0; i < csapatok.length; i++) {
 }
 
 document.write("</ul>");
+
+document.write("<hr>");
+
+//4. A legtobbet javito csapat adatainak kiiraasa
+
+function LegnagyobbatJavitoCsapat() {
+  let maxIndex = 0;
+  for (let i = 0; i < fifaAdatok.length; i++) {
+    if (fifaAdatok[i].valtozas > fifaAdatok[maxIndex].valtozas) {
+      maxIndex = i;
+    }
+  }
+  return maxIndex;
+}
+
+document.write(fifaAdatok[LegnagyobbatJavitoCsapat()].nev);
+document.write("<br>");
+document.write(fifaAdatok[LegnagyobbatJavitoCsapat()].helyezes);
+document.write("<br>");
+document.write(fifaAdatok[LegnagyobbatJavitoCsapat()].pont);
+document.write("<br>");
+
+document.write("<hr>");
+//5.Szerepel-e magyarorszag (true/false)
+
+function SzerepelMagyarorszag() {
+  let szerepelE = false;
+  for (let i = 1; i < fifaAdatok.length; i++) {
+    if (fifaAdatok[i].nev == "Magyarország") {
+      szerepelE = true;
+    } else {
+      szerepelE = false;
+    }
+  }
+  return szerepelE;
+}
+
+document.write(
+  "Magyarország szerepel a Fifa ranglistában: <br>" + SzerepelMagyarorszag()
+);
+
+document.write("<hr>");
+//6. statisztika: a valtozokrol, mibol mennyi van, de csak azok szerepeljenek, ahol a valtozas legalabb 2-szer elofordul
+
