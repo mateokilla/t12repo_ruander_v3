@@ -37,11 +37,10 @@ function MaganHangzoTabusito(szo) {
 }
 document.write(MaganHangzoTabusito("árvíztűrő tükörfurógép"));
 
-document.write('<br>')
-
+document.write("<br>");
 
 //ez egyszerubb
-function MaganTabu(szo){
-    return maganhangzokNelkul=szo.replace(/[aáéauoőúűóüö]/gi,"")
+function MaganTabu(szo) {
+  return (maganhangzokNelkul = szo.replace(/[aáéauoőúűóüö]/gi, ""));
 }
 document.write(MaganTabu("árvíztűrő tükörfurógép"));
