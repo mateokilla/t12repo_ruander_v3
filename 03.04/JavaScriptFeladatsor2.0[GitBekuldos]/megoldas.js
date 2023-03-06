@@ -1,6 +1,6 @@
 //Bernáth Márk, Team-12
 
-const Dolgozok = [
+let Dolgozok = [
   {
     nev: "Koaxk Ábel",
     kor: 23,
@@ -88,3 +88,80 @@ document.write("<br>" + tajSzamEllenor("037687210"));
 document.write("<br>" + tajSzamEllenor("019536646"));
 
 document.write("<hr>");
+
+//3.feladat
+let vizsgaltTomb = [3, 5, 10, 16, 9];
+
+function tombTerjedelem(vizsgalandoTomb) {
+  let minErtek = vizsgalandoTomb[0];
+  let maxErtek = vizsgalandoTomb[0];
+
+  for (i = 0; i < vizsgalandoTomb.length; i++) {
+    if (vizsgalandoTomb[i] < minErtek) {
+      minErtek = vizsgalandoTomb[i];
+    }
+  }
+
+  for (i = 0; i < vizsgalandoTomb.length; i++) {
+    if (vizsgalandoTomb[i] > maxErtek) {
+      maxErtek = vizsgalandoTomb[i];
+    }
+  }
+
+  let terjedelem = maxErtek - minErtek;
+  document.write(
+    `A tömb legkisebb eleme: ${minErtek}, a legnagyobb pedig ${maxErtek}, a terjedelem pedig: `
+  );
+  return terjedelem;
+}
+
+document.write(tombTerjedelem(vizsgaltTomb));
+
+document.write("<hr>");
+
+//4.feladat
+function legidosebbDolgozo(objektum) {
+  let maxIndex = 0;
+  for (let i = 1; i < objektum.length; i++) {
+    if (objektum[i].kor > objektum[maxIndex].kor) {
+      maxIndex = i;
+    }
+  }
+  return maxIndex;
+}
+
+document.write("A legidősebb dolgozó indexe: " + legidosebbDolgozo(Dolgozok));
+
+document.write("<hr>");
+
+//5.feladat
+function fizetesAtlag(objektum) {
+  let osszeg = 0;
+  let atlag = 0;
+
+  for (let i = 0; i < objektum.length; i++) {
+    osszeg += objektum[i].fizetes;
+  }
+  atlag = parseInt(osszeg / objektum.length);
+
+  return atlag;
+}
+
+document.write('A dolgozók átlagfizetése: ' + fizetesAtlag(Dolgozok) + 'Ft. <br>');
+
+document.write("<hr>");
+
+function fizetesEmeles(objektum){
+    const atlag = fizetesAtlag(objektum)
+    for (let i = 0; i < objektum.length; i++){
+        if(objektum[i].fizetes < atlag){
+            objektum[i].fizetes  *= 1.1
+        }
+        
+    }
+    return objektum
+}
+
+// Call fizetesEmeles function to update the salaries
+console.log(fizetesEmeles(Dolgozok))
+
