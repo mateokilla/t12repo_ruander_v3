@@ -147,21 +147,34 @@ function fizetesAtlag(objektum) {
   return atlag;
 }
 
-document.write('A dolgozók átlagfizetése: ' + fizetesAtlag(Dolgozok) + 'Ft. <br>');
+document.write(
+  "A dolgozók átlagfizetése: " + fizetesAtlag(Dolgozok) + "Ft. <br>"
+);
 
 document.write("<hr>");
 
-function fizetesEmeles(objektum){
-    const atlag = fizetesAtlag(objektum)
-    for (let i = 0; i < objektum.length; i++){
-        if(objektum[i].fizetes < atlag){
-            objektum[i].fizetes  *= 1.1
-        }
-        
+function fizetesEmeles(objektum) {
+  const atlag = fizetesAtlag(objektum);
+  console.log(atlag);
+  for (let i = 0; i < objektum.length; i++) {
+    if (objektum[i].fizetes < atlag) {
+      //vmiért csak így engedi érvényesen a szorzást
+      objektum[i].fizetes = objektum[i].fizetes + objektum[i].fizetes * 0.1;
     }
-    return objektum
+  }
+  return objektum;
 }
 
-// Call fizetesEmeles function to update the salaries
-console.log(fizetesEmeles(Dolgozok))
+console.log(fizetesEmeles(Dolgozok));
+console.log(typeof Dolgozok[i].fizetes);
 
+document.write(
+  "Az átlag alatti fizetések megemelése után az egyes dolgozók bérei a következőek: "
+);
+document.write("<ul>");
+for (let i = 0; i < Dolgozok.length; i++) {
+  document.write(`<li>${Dolgozok[i].nev} - ${Dolgozok[i].fizetes} Ft.</li>`);
+}
+document.write("</ul>");
+
+document.write("<hr>");
