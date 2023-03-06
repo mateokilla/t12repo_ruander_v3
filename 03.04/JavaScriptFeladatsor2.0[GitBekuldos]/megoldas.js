@@ -1,4 +1,7 @@
 //Bernáth Márk, Team-12
+document.write(
+  "<style>*{background-color:black; color: whitesmoke; font-size:1.1rem;padding-left:1rem;}</style> <br>"
+);
 
 let Dolgozok = [
   {
@@ -46,6 +49,7 @@ let Dolgozok = [
 ];
 
 //1.feladat
+document.write("1.feladat<br>");
 function hosszEllenor(szoveg) {
   if (szoveg.length < 8) {
     return false;
@@ -53,11 +57,12 @@ function hosszEllenor(szoveg) {
     return true;
   }
 }
-document.write(hosszEllenor("teszt"));
-document.write("<br>" + hosszEllenor("feladatteszt"));
+document.write("<b>Ellenőrízendő szöveg:</b> teszt; " +hosszEllenor("teszt"));
+document.write("<br>" + "<b>Ellenőrízendő szöveg:</b> feladatteszt; " + hosszEllenor("feladatteszt"));
 document.write("<hr>");
 
 //2.feladat
+document.write("2.feladat<br>");
 function tajSzamEllenor(szamsorSzovegkent) {
   const tombbeAlakitottSzoveg = Array.from(String(szamsorSzovegkent));
   const tombbeAlakitottSzam = tombbeAlakitottSzoveg.map((str) => Number(str));
@@ -82,14 +87,21 @@ function tajSzamEllenor(szamsorSzovegkent) {
     document.write("Túl kevés, vagy túl sok a szám.");
   }
 }
-document.write(tajSzamEllenor("040655330"));
-document.write("<br>" + tajSzamEllenor("111111111"));
-document.write("<br>" + tajSzamEllenor("037687210"));
-document.write("<br>" + tajSzamEllenor("019536646"));
+document.write("<b>Ellenőrízendő szám:</b> 040655330; " + tajSzamEllenor("040655330"));
+document.write(
+  "<br>" + "<b>Ellenőrízendő szám:</b> 111111111; " + tajSzamEllenor("111111111")
+);
+document.write(
+  "<br>" + "<b>Ellenőrízendő szám:</b> 037687210; " + tajSzamEllenor("037687210")
+);
+document.write(
+  "<br>" + "<b>Ellenőrízendő szám:</b> 019536646; " + tajSzamEllenor("019536646")
+);
 
 document.write("<hr>");
 
 //3.feladat
+document.write("3.feladat<br>");
 let vizsgaltTomb = [3, 5, 10, 16, 9];
 
 function tombTerjedelem(vizsgalandoTomb) {
@@ -120,6 +132,7 @@ document.write(tombTerjedelem(vizsgaltTomb));
 document.write("<hr>");
 
 //4.feladat
+document.write("4.feladat<br>");
 function legidosebbDolgozo(objektum) {
   let maxIndex = 0;
   for (let i = 1; i < objektum.length; i++) {
@@ -130,11 +143,14 @@ function legidosebbDolgozo(objektum) {
   return maxIndex;
 }
 
-document.write("<b>A legidősebb dolgozó indexe: </b>" + legidosebbDolgozo(Dolgozok));
+document.write(
+  "<b>A legidősebb dolgozó indexe: </b>" + legidosebbDolgozo(Dolgozok)
+);
 
 document.write("<hr>");
 
 //5.feladat
+document.write("5.feladat a.)<br>");
 function fizetesAtlag(objektum) {
   let osszeg = 0;
   let atlag = 0;
@@ -164,6 +180,7 @@ function fizetesEmeles(objektum) {
   }
   return objektum;
 }
+document.write("5.feladat b.)<br>");
 document.write(
   "<b>Az átlag alatti fizetések megemelése előtt az egyes dolgozók bérei a következőek: </b>"
 );
