@@ -110,7 +110,7 @@ function tombTerjedelem(vizsgalandoTomb) {
 
   let terjedelem = maxErtek - minErtek;
   document.write(
-    `A tömb legkisebb eleme: ${minErtek}, a legnagyobb pedig ${maxErtek}, a terjedelem pedig: `
+    `<b>A tömb legkisebb eleme: </b>${minErtek}<b>, a legnagyobb pedig </b>${maxErtek}<b>, a terjedelem pedig: </b>`
   );
   return terjedelem;
 }
@@ -130,7 +130,7 @@ function legidosebbDolgozo(objektum) {
   return maxIndex;
 }
 
-document.write("A legidősebb dolgozó indexe: " + legidosebbDolgozo(Dolgozok));
+document.write("<b>A legidősebb dolgozó indexe: </b>" + legidosebbDolgozo(Dolgozok));
 
 document.write("<hr>");
 
@@ -148,7 +148,7 @@ function fizetesAtlag(objektum) {
 }
 
 document.write(
-  "A dolgozók átlagfizetése: " + fizetesAtlag(Dolgozok) + "Ft. <br>"
+  "<b>A dolgozók átlagfizetése: </b>" + fizetesAtlag(Dolgozok) + "Ft. <br>"
 );
 
 document.write("<hr>");
@@ -164,12 +164,19 @@ function fizetesEmeles(objektum) {
   }
   return objektum;
 }
-
+document.write(
+  "<b>Az átlag alatti fizetések megemelése előtt az egyes dolgozók bérei a következőek: </b>"
+);
+document.write("<ul>");
+for (let i = 0; i < Dolgozok.length; i++) {
+  document.write(`<li>${Dolgozok[i].nev} - ${Dolgozok[i].fizetes} Ft.</li>`);
+}
+document.write("</ul>");
 console.log(fizetesEmeles(Dolgozok));
 console.log(typeof Dolgozok[i].fizetes);
 
 document.write(
-  "Az átlag alatti fizetések megemelése után az egyes dolgozók bérei a következőek: "
+  "<br><b>Az átlag alatti fizetések megemelése után az egyes dolgozók bérei a következőek: </b>"
 );
 document.write("<ul>");
 for (let i = 0; i < Dolgozok.length; i++) {
