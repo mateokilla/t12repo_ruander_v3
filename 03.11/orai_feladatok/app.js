@@ -28,6 +28,10 @@ function lottoSzamGenerator(alsoHatar, felsoHatar, kihuzandoSzamokSzama) {
     return lottoSzamok;
   }
   
-document.write(lottoSzamGenerator(1,80,10))
+document.write(lottoSzamGenerator(1,80,10)+ '<br>')
 
-  
+function szazalekAtvalto(ertek, szazalek){
+    return ujErtek = ertek/100*szazalek
+}
+
+document.write(szazalekAtvalto(3,50))
