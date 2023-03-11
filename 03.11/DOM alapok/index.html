@@ -1,12 +1,28 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM alapok</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <script src="index.js"></script>
-</body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <input type="number" name="number" id="aOldal" min="1" />
+    <input type="number" name="number" id="bOldal" min="1"/>
+    <button id="szamito" onclick="Szamitas()">Calculation</button>
+    <p id="teglalapKerulet"></p>
+    <p id="teglalapTerulet"></p>
+    <script>
+      function Szamitas() {
+        let a = document.getElementById("aOldal").value;
+        let b = document.getElementById("bOldal").value;
+        let kerulet = 2 * a + 2* b;
+        let terulet = a * b;
+        document.getElementById("teglalapKerulet").innerHTML =
+          "A kerulet: " + kerulet;
+        document.getElementById("teglalapTerulet").innerHTML =
+          "A kerulet: " + terulet;
+      }
+    </script>
+  </body>
 </html>
