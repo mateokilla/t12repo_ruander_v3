@@ -57,8 +57,12 @@ function hosszEllenor(szoveg) {
     return true;
   }
 }
-document.write("<b>Ellenőrízendő szöveg:</b> teszt; " +hosszEllenor("teszt"));
-document.write("<br>" + "<b>Ellenőrízendő szöveg:</b> feladatteszt; " + hosszEllenor("feladatteszt"));
+document.write("<b>Ellenőrízendő szöveg:</b> teszt; " + hosszEllenor("teszt"));
+document.write(
+  "<br>" +
+    "<b>Ellenőrízendő szöveg:</b> feladatteszt; " +
+    hosszEllenor("feladatteszt")
+);
 document.write("<hr>");
 
 //2.feladat
@@ -87,15 +91,23 @@ function tajSzamEllenor(szamsorSzovegkent) {
     document.write("Túl kevés, vagy túl sok a szám.");
   }
 }
-document.write("<b>Ellenőrízendő szám:</b> 040655330; " + tajSzamEllenor("040655330"));
 document.write(
-  "<br>" + "<b>Ellenőrízendő szám:</b> 111111111; " + tajSzamEllenor("111111111")
+  "<b>Ellenőrízendő szám:</b> 040655330; " + tajSzamEllenor("040655330")
 );
 document.write(
-  "<br>" + "<b>Ellenőrízendő szám:</b> 037687210; " + tajSzamEllenor("037687210")
+  "<br>" +
+    "<b>Ellenőrízendő szám:</b> 111111111; " +
+    tajSzamEllenor("111111111")
 );
 document.write(
-  "<br>" + "<b>Ellenőrízendő szám:</b> 019536646; " + tajSzamEllenor("019536646")
+  "<br>" +
+    "<b>Ellenőrízendő szám:</b> 037687210; " +
+    tajSzamEllenor("037687210")
+);
+document.write(
+  "<br>" +
+    "<b>Ellenőrízendő szám:</b> 019536646; " +
+    tajSzamEllenor("019536646")
 );
 
 document.write("<hr>");
